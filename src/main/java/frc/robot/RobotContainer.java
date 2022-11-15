@@ -65,7 +65,6 @@ public class RobotContainer {
     new POVButton(m_driverController, 135).whenHeld(new reverseMotor(m_MotorSS));
     new POVButton(m_driverController, 225).whenHeld(new runMotor(m_MotorSS));
     new POVButton(m_driverController, 315).whenHeld(new reverseMotor(m_MotorSS));
-    new POVButton(m_driverController, ).whenHeld(new runMotor(m_MotorSS));
   }
 
 

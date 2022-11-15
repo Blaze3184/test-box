@@ -13,6 +13,8 @@ import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.Constants.OIConstants;
 import edu.wpi.first.wpilibj.XboxController.Button;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
+import edu.wpi.first.wpilibj2.command.button.POVButton;
+import edu.wpi.first.wpilibj2.command.button.Trigger;
 
 
 
@@ -55,6 +57,15 @@ public class RobotContainer {
     new JoystickButton(m_driverController, Button.kRightStick.value).whenHeld(new reverseMotor(m_MotorSS));
     new JoystickButton(m_driverController, Button.kStart.value).whenHeld(new runMotor(m_MotorSS));
     new JoystickButton(m_driverController, Button.kBack.value).whenHeld(new reverseMotor(m_MotorSS));
+    new POVButton(m_driverController, 0).whenHeld(new runMotor(m_MotorSS));
+    new POVButton(m_driverController, 180).whenHeld(new reverseMotor(m_MotorSS));
+    new POVButton(m_driverController, 270).whenHeld(new runMotor(m_MotorSS));
+    new POVButton(m_driverController, 90).whenHeld(new reverseMotor(m_MotorSS));
+    new POVButton(m_driverController, 45).whenHeld(new runMotor(m_MotorSS));
+    new POVButton(m_driverController, 135).whenHeld(new reverseMotor(m_MotorSS));
+    new POVButton(m_driverController, 225).whenHeld(new runMotor(m_MotorSS));
+    new POVButton(m_driverController, 315).whenHeld(new reverseMotor(m_MotorSS));
+    new POVButton(m_driverController, ).whenHeld(new runMotor(m_MotorSS));
   }
 
 

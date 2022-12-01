@@ -11,6 +11,7 @@ import frc.robot.commands.runMotor;
 import frc.robot.subsystems.MotorSS;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.Constants.OIConstants;
+import edu.wpi.first.wpilibj.XboxController.Axis;
 import edu.wpi.first.wpilibj.XboxController.Button;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj2.command.button.POVButton;
@@ -65,8 +66,9 @@ public class RobotContainer {
     new POVButton(m_driverController, 135).whenHeld(new reverseMotor(m_MotorSS));
     new POVButton(m_driverController, 225).whenHeld(new runMotor(m_MotorSS));
     new POVButton(m_driverController, 315).whenHeld(new reverseMotor(m_MotorSS));
-    new POVButton(m_driverController, ).whenHeld(new runMotor(m_MotorSS));
-  }
+    new POVButton(m_driverController, Axis.kLeftTrigger.value).whenActive(new runMotor(m_MotorSS));
+    
+    }
 
 
   /**

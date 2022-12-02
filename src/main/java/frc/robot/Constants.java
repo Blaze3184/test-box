@@ -17,6 +17,7 @@ public final class Constants {
     public static int kWheelRadius = 3;
     public static int kEncoderResolution = 1024;
     public static int kMotorPort = 1;
+    public static int kMotorPort2 = 2;
 
     public static final class OIConstants {
         public static final int kDriverControllerPort = 0;

@@ -8,7 +8,10 @@ import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.reverseMotor;
 import frc.robot.commands.runMotor;
+import frc.robot.commands.reverseMotor2;
+import frc.robot.commands.runMotor2;
 import frc.robot.subsystems.MotorSS;
+import frc.robot.subsystems.MotorSS2;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.Constants.OIConstants;
 import edu.wpi.first.wpilibj.XboxController.Axis;
@@ -25,8 +28,11 @@ import edu.wpi.first.wpilibj2.command.button.POVButton;
  * subsystems, commands, and button mappings) should be declared here.
  */
 public class RobotContainer {
+
   // The robot's subsystems and commands are defined here...
   private final MotorSS m_MotorSS = new MotorSS();
+  private final MotorSS2 m_MotorSS2 = new MotorSS2();
+
 
   private final runMotor m_autoCommand = new runMotor(m_MotorSS);
 
@@ -47,8 +53,8 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
-    new JoystickButton(m_driverController, Button.kB.value).whenHeld(new runMotor(m_MotorSS));
-    new JoystickButton(m_driverController, Button.kA.value).whenHeld(new reverseMotor(m_MotorSS));
+    new JoystickButton(m_driverController, Button.kB.value).whenHeld(new runMotor2(m_MotorSS2));
+    new JoystickButton(m_driverController, Button.kA.value).whenHeld(new reverseMotor2(m_MotorSS2));
     new JoystickButton(m_driverController, Button.kX.value).whenHeld(new runMotor(m_MotorSS));
     new JoystickButton(m_driverController, Button.kY.value).whenHeld(new reverseMotor(m_MotorSS));
     new JoystickButton(m_driverController, Button.kLeftBumper.value).whenHeld(new runMotor(m_MotorSS));
@@ -65,7 +71,7 @@ public class RobotContainer {
     new POVButton(m_driverController, 135).whenHeld(new reverseMotor(m_MotorSS));
     new POVButton(m_driverController, 225).whenHeld(new runMotor(m_MotorSS));
     new POVButton(m_driverController, 315).whenHeld(new reverseMotor(m_MotorSS));
-    
+
     }
 
 

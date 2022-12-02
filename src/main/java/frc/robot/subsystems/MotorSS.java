@@ -6,6 +6,7 @@ import com.revrobotics.CANSparkMax;
 import frc.robot.Constants;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
+import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class MotorSS extends SubsystemBase {
@@ -22,7 +23,8 @@ public class MotorSS extends SubsystemBase {
     // This method will be called once per scheduler run
   }
 
-  public void move(double speed) {
-    m_motor.set(speed);
+  public void move(double driverController) {
+    m_motor.set(driverController);
   }
 }
+

@@ -12,15 +12,17 @@ package frc.robot;
  * <p>It is advised to statically import this class (or one of its inner classes) wherever the
  * constants are needed, to reduce verbosity.
  */
-public final class Constants {
-    public static int kWheelDiameter = 6;
-    public static int kWheelRadius = 3;
-    public static int kEncoderResolution = 1024;
-    public static int kMotorPort = 1;
+public final class RobotMap {
 
-    public static final class OIConstants {
-        public static final int kDriverControllerPort = 0;
-        public static final int kGunnerControllerPort = 1;
+    // CAN Bus Values
+    public static class CAN {
+        public static int kMotorPort = 1;
     }
+
+    public static final class Controller {
+        public static final int driverController = 0;
+        public static final int gunnerController = 1;
+    }
+
 
 }

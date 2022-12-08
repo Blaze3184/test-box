@@ -3,14 +3,15 @@
 package frc.robot.subsystems;
 
 import com.revrobotics.CANSparkMax;
-import frc.robot.Constants;
+import frc.robot.RobotMap;
+
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class MotorSS extends SubsystemBase {
 
-  private final CANSparkMax m_motor = new CANSparkMax(Constants.kMotorPort, MotorType.kBrushless);
+  private final CANSparkMax m_motor = new CANSparkMax(RobotMap.CAN.kMotorPort, MotorType.kBrushless);
 
   /** Creates a new Drivetrain. */
   public MotorSS() {

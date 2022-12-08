@@ -1,13 +1,13 @@
 package frc.robot;
 import edu.wpi.first.wpilibj.XboxController;
-import frc.robot.Constants.OIConstants;
+import frc.robot.RobotMap.Controller;
 
 public class OI {
-    public static XboxController driverController;
-    public XboxController gunnerController;
+    public static XboxController driver;
+    public XboxController gunner;
    
     public OI() {
-    driverController = new XboxController(OIConstants.kDriverControllerPort);
-    gunnerController = new XboxController(OIConstants.kGunnerControllerPort);
+        driver = new XboxController(Controller.driverController);
+        gunner = new XboxController(Controller.gunnerController);
     }
 }

@@ -6,17 +6,14 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
+import frc.robot.commands.joyRunMotor;
 import frc.robot.commands.reverseMotor;
 import frc.robot.commands.runMotor;
 import frc.robot.subsystems.MotorSS;
 import edu.wpi.first.wpilibj2.command.Command;
-import frc.robot.Constants.OIConstants;
-import edu.wpi.first.wpilibj.XboxController.Axis;
 import edu.wpi.first.wpilibj.XboxController.Button;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj2.command.button.POVButton;
-
-
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -30,7 +27,7 @@ public class RobotContainer {
 
   private final runMotor m_autoCommand = new runMotor(m_MotorSS);
 
-  private XboxController m_driverController = new XboxController(OIConstants.kDriverControllerPort);
+  private XboxController m_driverController = new XboxController(RobotMap.Controller.driverController);
   
 
 
@@ -38,6 +35,9 @@ public class RobotContainer {
   public RobotContainer() {
     // Configure the button bindings
     configureButtonBindings();
+
+    // Set motor to move based on Joystick
+    m_MotorSS.setDefaultCommand(new joyRunMotor(m_MotorSS, m_driverController.getLeftY()));
   }
 
   /**

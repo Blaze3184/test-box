@@ -34,9 +34,10 @@ public class RobotContainer {
   private final MotorSS2 m_MotorSS2 = new MotorSS2();
 
 
-  private final runMotor m_autoCommand = new runMotor(m_MotorSS);
+  private final reverseMotor m_autoCommand = new reverseMotor(m_MotorSS);
 
   private XboxController m_driverController = new XboxController(OIConstants.kDriverControllerPort);
+  private XboxController m_driverController2 = new XboxController(OIConstants.kGunnerControllerPort);
   
 
 
@@ -57,8 +58,8 @@ public class RobotContainer {
     new JoystickButton(m_driverController, Button.kA.value).whenHeld(new reverseMotor2(m_MotorSS2));
     new JoystickButton(m_driverController, Button.kX.value).whenHeld(new runMotor(m_MotorSS));
     new JoystickButton(m_driverController, Button.kY.value).whenHeld(new reverseMotor(m_MotorSS));
-    new JoystickButton(m_driverController, Button.kLeftBumper.value).whenHeld(new runMotor(m_MotorSS));
-    new JoystickButton(m_driverController, Button.kRightBumper.value).whenHeld(new reverseMotor(m_MotorSS));
+    new JoystickButton(m_driverController2, Button.kLeftBumper.value).whenHeld(new runMotor(m_MotorSS));
+    new JoystickButton(m_driverController2, Button.kRightBumper.value).whenHeld(new reverseMotor(m_MotorSS));
     new JoystickButton(m_driverController, Button.kLeftStick.value).whenHeld(new runMotor(m_MotorSS));
     new JoystickButton(m_driverController, Button.kRightStick.value).whenHeld(new reverseMotor(m_MotorSS));
     new JoystickButton(m_driverController, Button.kStart.value).whenHeld(new runMotor(m_MotorSS));

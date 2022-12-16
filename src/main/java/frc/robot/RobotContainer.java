@@ -35,6 +35,7 @@ public class RobotContainer {
 
 
   private final reverseMotor m_autoCommand = new reverseMotor(m_MotorSS);
+  private final runMotor2 m_autoCommand2 = new runMotor2(m_MotorSS2);
 
   private XboxController m_driverController = new XboxController(OIConstants.kDriverControllerPort);
   private XboxController m_driverController2 = new XboxController(OIConstants.kGunnerControllerPort);
@@ -81,8 +82,10 @@ public class RobotContainer {
    *
    * @return the command to run in autonomous
    */
-  public Command getAutonomousCommand() {
+  public Command getAutonomousCommand2() {
     // An ExampleCommand will run in autonomous
-    return m_autoCommand;
+    return m_autoCommand2;}
+
+  public Command getAutonomousCommand() {
+    return m_autoCommand; }
   }
-}

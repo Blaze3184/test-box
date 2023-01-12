@@ -9,7 +9,7 @@ import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class MotorSS extends SubsystemBase {
+public class MotorSS extends SubsystemBase { 
 
   private final CANSparkMax m_motor = new CANSparkMax(Constants.kMotorPort, MotorType.kBrushless);
 
@@ -18,12 +18,12 @@ public class MotorSS extends SubsystemBase {
     m_motor.set(0);
   }
 
-  @Override
+  @Override 
   public void periodic() {
     // This method will be called once per scheduler run
   }
-
-  public void move(double driverController) {
+  
+  public void move(driverController) {
     m_motor.set(driverController);
   }
 }

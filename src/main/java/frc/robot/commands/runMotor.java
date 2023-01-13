@@ -31,7 +31,7 @@ public class runMotor extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-      m_motor.move(0.5);
+      m_motor.move(0.05);
   }
 
   // Called once the command ends or is interrupted.

@@ -65,6 +65,7 @@ public class RobotContainer {
     new JoystickButton(m_driverController, Button.kRightStick.value).whenHeld(new reverseMotor(m_MotorSS));
     new JoystickButton(m_driverController, Button.kStart.value).whenHeld(new runMotor(m_MotorSS));
     new JoystickButton(m_driverController, Button.kBack.value).whenHeld(new reverseMotor(m_MotorSS));
+    new POVButton(m_driverController, 0).whenHeld(new runMotor(m_MotorSS));
     new POVButton(m_driverController, 180).whenHeld(new reverseMotor(m_MotorSS));
     new POVButton(m_driverController, 270).whenHeld(new runMotor(m_MotorSS));
     new POVButton(m_driverController, 90).whenHeld(new reverseMotor(m_MotorSS));
@@ -86,5 +87,5 @@ public class RobotContainer {
     return m_autoCommand2;}
 
   public Command getAutonomousCommand() {
-    return m_autoCommand;}
+    return m_autoCommand; }
   }
